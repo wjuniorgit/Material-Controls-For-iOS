@@ -59,6 +59,7 @@
   // delegate scrollview
   for (UIView *v in pageController.view.subviews) {
     if ([v isKindOfClass:[UIScrollView class]]) {
+      ((UIScrollView *)v).bounces = NO;
       ((UIScrollView *)v).delegate = self;
     }
   }
