@@ -344,6 +344,8 @@
   if (self.enabled) {
     trackView.backgroundColor = _trackOffColor;
     intensityView.backgroundColor = _trackOnColor;
+    //disables tickColor
+    tickMarksView.tickColor = _tickMarksColor;
   } else {
     trackView.backgroundColor = _disabledColor;
     intensityView.backgroundColor = _disabledColor;
