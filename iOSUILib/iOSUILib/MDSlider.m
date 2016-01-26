@@ -544,6 +544,7 @@
 #pragma mark touch events
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
   CGPoint point = [touches.allObjects[0] locationInView:trackView];
+  [self sendActionsForControlEvents:UIControlEventTouchDragEnter];
   [self calculateValueFromTouchPoint:point];
   [thumbView focused:nil];
 }
@@ -554,10 +555,12 @@
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+  [self sendActionsForControlEvents:UIControlEventTouchDragExit];
   [thumbView lostFocused:nil];
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
+  [self sendActionsForControlEvents:UIControlEventTouchDragExit];
   [thumbView lostFocused:nil];
 }
 
