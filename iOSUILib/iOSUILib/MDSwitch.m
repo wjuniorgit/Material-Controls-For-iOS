@@ -123,6 +123,11 @@
   [_parent sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
+- (void)setStatusOn:(BOOL)on {
+  _on = on;
+  [self switchState:on];
+}
+
 - (void)setOnColorPalette:(ColorPalette *)colorPalette {
   onColorPalette = colorPalette;
   [self updateColor];
@@ -358,6 +363,10 @@
 
 - (void)setOn:(BOOL)on {
   [switchLayer setOn:on];
+}
+
+- (void)setStatusOn:(BOOL)on {
+  [switchLayer setStatusOn:on];
 }
 
 - (BOOL)isOn {
