@@ -32,4 +32,5 @@ IB_DESIGNABLE
 @property(nonatomic) IBInspectable UIColor *trackOff;
 @property(nonatomic) IBInspectable UIColor *thumbDisabled;
 @property(nonatomic) IBInspectable UIColor *trackDisabled;
+-(void)setStatusOn:(BOOL)on;
 @end
