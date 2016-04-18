@@ -312,9 +312,15 @@
     
 }
 
+- (void)endRippleAnimation {
+  [_mdLayer stopEffectsImmediately];
+}
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    [super touchesEnded:touches withEvent:event];
+  [self performSelector:@selector(endRippleAnimation)
+             withObject:nil
+             afterDelay:0.2];
+  [super touchesEnded:touches withEvent:event];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
