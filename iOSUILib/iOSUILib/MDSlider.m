@@ -554,6 +554,7 @@
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
   CGPoint point = [touches.allObjects[0] locationInView:trackView];
   [self calculateValueFromTouchPoint:point];
+  [self sendActionsForControlEvents:UIControlEventTouchDragInside];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
