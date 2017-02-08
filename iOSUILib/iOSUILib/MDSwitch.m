@@ -423,6 +423,7 @@
   [super touchesEnded:touches withEvent:event];
   CGPoint point = [touches.allObjects[0] locationInView:self];
   [switchLayer onTouchUp:[self.layer convertPoint:point toLayer:switchLayer]];
+  [self sendActionsForControlEvents:UIControlEventTouchDragExit];
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
