@@ -30,6 +30,7 @@
 #import "UIViewHelper.h"
 
 #define kMDTrackPadding 16
+#define kMDTrackZeroPadding 0
 #define kMDTrackPaddingWithLabel 24
 #define kMDTrackWidth 2
 
@@ -138,7 +139,8 @@
   metricsDictionary = @{
     @"trackPadding" : @kMDTrackPadding,
     @"labeledPadding" : @kMDTrackPaddingWithLabel,
-    @"trackWidth" : @kMDTrackWidth
+    @"trackWidth" : @kMDTrackWidth,
+    @"trackPaddingZero" : @kMDTrackZeroPadding
   };
 
   [UIViewHelper
@@ -287,7 +289,7 @@
     [constraintsMutableArray
         addObjectsFromArray:
             [UIViewHelper
-                addConstraintsWithVisualFormat:@"H:|-trackPadding-[trackView]"
+                addConstraintsWithVisualFormat:@"H:|-trackPaddingZero-[trackView]"
                                        options:0
                                        metrics:metricsDictionary
                                          views:viewsDictionary
